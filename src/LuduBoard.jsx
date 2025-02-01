@@ -3,6 +3,12 @@ import { useState } from "react"
 export default function LudoBoard() {
 
     let [move, setMoves] = useState({blue: 0, green: 0, yellow: 0, red: 0})
+
+    let [arr, setArray] = useState(["Hasnain"])
+    
+    let updateArray = () => {
+        setArray([...arr, " Khan"])
+        }
     
     let updateBlue = () => {
         move.blue += 1;
@@ -28,6 +34,7 @@ export default function LudoBoard() {
     return(
         <div>
             <h2>Game Begin!</h2>
+            <p onClick={updateArray}>Array: {arr}</p>
             <div className="board">
                 <p>Blue : {move.blue}</p>
                 <button onClick={updateBlue} style={{backgroundColor: "blue", color: "white"}}>+1</button>

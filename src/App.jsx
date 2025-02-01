@@ -1,12 +1,17 @@
-import { useState } from 'react'
-import './App.css'
-import LuduBoard from './luduBoard'
+import React from 'react';
+import './App.css';
+import Lottery from './Lottery';
+
 function App() {
+
+  let winCondition = (ticket) => {
+        return ticket.every((num) => num === ticket[0])
+  }
   return (
     <>
-     <LuduBoard />
+      <Lottery n={2} winCondition={winCondition}/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
